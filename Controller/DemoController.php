@@ -47,10 +47,10 @@ class DemoController extends Controller
      * @param array $params
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showArticleAction($locationId, $viewType, $layout = false, array $params = array())
+    public function showArticleAction(Location $location, $viewType, $layout = false, array $params = array())
     {
         return $this->get('ez_content')->viewLocation(
-            $locationId,
+            $location->id,
             $viewType,
             $layout,
             array(
